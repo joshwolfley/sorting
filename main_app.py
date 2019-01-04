@@ -41,7 +41,7 @@ class Application(object):
                     self.car_list.append(
                        Car(make=make, model=model, year=year, color=color, rank=rank))
                 user_input = None
-                while user_input != "5":
+                while user_input != "6":
                     self.sorting_menu()
                     user_input = input()
                     if user_input == "1":

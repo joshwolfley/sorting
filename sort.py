@@ -44,9 +44,9 @@ class Sort(object):
                   f'color: {car.color}  '
                   f'Year:  {car.year}')
 
-    def random_sort(self, car_list):  # why is it deleting all the cars in my original car_list?
+    def random_sort(self, car_list):
 
-        car_list_copy = car_list
+        car_list_copy = car_list.copy()
         sorted_list = []
         while car_list_copy != []:
             try:
