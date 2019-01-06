@@ -1,5 +1,6 @@
 from random import randint
 
+
 class Sort(object):
 
     def sort_by_entry(self, car_list):
@@ -13,7 +14,19 @@ class Sort(object):
 
     def sort_by_ranking(self, car_list):
 
-        sorted_list = sorted(car_list, key=lambda Car: Car.rank, reverse=False)
+        car_list_copy = car_list.copy()
+        sorted_list = []
+
+        while car_list_copy != []:
+            highest_rank = car_list_copy[0].rank
+            i = 0
+            for car in car_list_copy:
+                if highest_rank > car.rank:
+                    highest_rank = car.rank
+            for sorted_car in car_list_copy:
+                if highest_rank == sorted_car.rank:
+                    sorted_list.append(car_list_copy.pop(i))
+                i += 1
 
         for car in sorted_list:
             print(f'Ranking: {car.rank}  '
